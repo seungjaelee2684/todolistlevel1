@@ -45,12 +45,12 @@ function App() {
     setContent('');
   }
 
-  const clickDoneBtn = (id) => {
+  const clickSwitchBtn = (id) => {
     const updatedItems = workingObj.map((item) => {
       if (item.id === id) {
         return {
           ...item,
-          isDone: true
+          isDone: !item.isDone
         };
       }
       return item;
@@ -58,20 +58,6 @@ function App() {
   
     setWorkingObj(updatedItems);
 
-  }
-
-  const clickWonkingBtn = (id) => {
-    const updatedItem = workingObj.map((item) => {
-      if (item.id === id) {
-        return {
-          ...item,
-          isDone: false
-        };
-      }
-      return item;
-    });
-  
-    setWorkingObj(updatedItem);
   }
 
   const clickRemoveButtonHandler = (id) => {
@@ -129,7 +115,7 @@ function App() {
                 key={item.id}
                 item={item}
                 clickRemoveButtonHandler={clickRemoveButtonHandler}
-                clickDoneBtn={clickDoneBtn}
+                clickDoneBtn={clickSwitchBtn}
               />)
               : null
           )
@@ -147,7 +133,7 @@ function App() {
                 key={item.id}
                 item={item}
                 clickRemoveButtonHandler={clickRemoveButtonHandler}
-                clickWonkingBtn={clickWonkingBtn}
+                clickWonkingBtn={clickSwitchBtn}
               />)
               : null
           )
