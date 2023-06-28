@@ -1,4 +1,4 @@
-function Done({ item, clickRemoveButtonHandler, clickWonkingBtn }) {
+function Done({ item, clickRemoveButtonHandler, clickSwitchBtn }) {
     return (
       <div className='app-todolist'>
         <div>
@@ -12,7 +12,7 @@ function Done({ item, clickRemoveButtonHandler, clickWonkingBtn }) {
           <br />
           <button className="app-removeBtn" onClick={() => clickRemoveButtonHandler(item.id)}>삭제하기</button>
           &nbsp;
-          <button className="app-btn" onClick={() => clickWonkingBtn(item.id)}>취소</button>
+          <button className="app-btn" onClick={() => clickSwitchBtn(item.id)}>취소</button>
         </div>
       </div>
     )
